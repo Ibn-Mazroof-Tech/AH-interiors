@@ -1,1 +1,658 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AH Interiors | Design + Execution Studio</title>
+    <meta
+      name="description"
+      content="AH Interiors designs and executes premium home, office, and turnkey interior projects. View portfolio, pricing, testimonials, and book a free consultation."
+    />
+    <meta name="keywords" content="interior designer, modular kitchen, turnkey interiors, home interior, office interior" />
+    <meta property="og:title" content="AH Interiors | Design + Execution" />
+    <meta property="og:description" content="Premium interior design + on-site execution with transparent process and pricing." />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#111111" />
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <style>
+      :root {
+        --bg: #0f1115;
+        --panel: #171a21;
+        --panel-2: #1e2230;
+        --text: #f2f3f7;
+        --muted: #b8bdcc;
+        --gold: #d2ac67;
+        --gold-soft: #f1dfb5;
+        --accent: #25d366;
+        --radius: 16px;
+      }
 
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: radial-gradient(circle at top right, #1a2031 0%, var(--bg) 55%);
+        color: var(--text);
+        font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.6;
+      }
+
+      img {
+        width: 100%;
+        display: block;
+        border-radius: 12px;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .container {
+        width: min(1120px, 92vw);
+        margin: 0 auto;
+      }
+
+      .btn {
+        display: inline-block;
+        border: none;
+        border-radius: 999px;
+        padding: 0.8rem 1.3rem;
+        cursor: pointer;
+        font-weight: 700;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+
+      .btn.primary {
+        background: linear-gradient(90deg, var(--gold), #b6853e);
+        color: #151515;
+      }
+
+      .btn.ghost {
+        border: 1px solid #3a4255;
+        color: var(--text);
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: rgba(12, 14, 18, 0.84);
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid #2a3040;
+      }
+
+      .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.7rem 0;
+        gap: 1rem;
+      }
+
+      .brand {
+        font-weight: 800;
+        letter-spacing: 0.06em;
+      }
+
+      .brand span {
+        color: var(--gold-soft);
+      }
+
+      .menu {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        font-size: 0.95rem;
+        color: var(--muted);
+      }
+
+      section {
+        padding: 4rem 0;
+      }
+
+      h1,
+      h2,
+      h3 {
+        line-height: 1.2;
+        margin-top: 0;
+      }
+
+      .tag {
+        color: var(--gold-soft);
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-weight: 700;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 1.1fr 1fr;
+        gap: 1.2rem;
+        align-items: center;
+      }
+
+      .hero p {
+        color: var(--muted);
+      }
+
+      .stat-grid,
+      .service-grid,
+      .project-grid,
+      .proof-grid,
+      .pricing-grid,
+      .blog-grid,
+      .review-grid {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .stat-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .service-grid,
+      .proof-grid,
+      .review-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .project-grid,
+      .pricing-grid,
+      .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .card {
+        background: linear-gradient(180deg, var(--panel) 0%, #141720 100%);
+        border: 1px solid #283042;
+        border-radius: var(--radius);
+        padding: 1rem;
+      }
+
+      .card p {
+        color: var(--muted);
+      }
+
+      .stats .card {
+        text-align: center;
+      }
+
+      .stats strong {
+        display: block;
+        font-size: 1.6rem;
+        color: var(--gold-soft);
+      }
+
+      .section-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        gap: 1rem;
+        margin-bottom: 1.2rem;
+      }
+
+      .project-card {
+        display: grid;
+        gap: 0.8rem;
+      }
+
+      .meta {
+        font-size: 0.9rem;
+        color: var(--gold-soft);
+      }
+
+      .filter-row {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        margin-bottom: 1rem;
+      }
+
+      .chip {
+        border: 1px solid #3b4357;
+        border-radius: 999px;
+        padding: 0.35rem 0.8rem;
+        background: #191d27;
+        color: var(--text);
+        cursor: pointer;
+      }
+
+      .chip.active {
+        border-color: var(--gold);
+        color: var(--gold-soft);
+      }
+
+      .before-after {
+        position: relative;
+        overflow: hidden;
+        border-radius: 12px;
+      }
+
+      .before-after .after-wrap {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        width: 50%;
+        border-right: 2px solid #fff;
+      }
+
+      .before-after input[type="range"] {
+        width: 100%;
+        margin-top: 0.6rem;
+      }
+
+      .about-layout,
+      .contact-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+
+      .process-list {
+        padding-left: 1.2rem;
+      }
+
+      form {
+        display: grid;
+        gap: 0.7rem;
+      }
+
+      input,
+      textarea,
+      select {
+        width: 100%;
+        background: #12151d;
+        color: var(--text);
+        border: 1px solid #384055;
+        border-radius: 10px;
+        padding: 0.7rem;
+      }
+
+      .contact-buttons {
+        display: flex;
+        gap: 0.6rem;
+        flex-wrap: wrap;
+      }
+
+      .map {
+        border: 0;
+        width: 100%;
+        min-height: 260px;
+        border-radius: 12px;
+      }
+
+      .floating-whatsapp {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        width: 54px;
+        height: 54px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: var(--accent);
+        color: #fff;
+        font-size: 1.4rem;
+        box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+        z-index: 50;
+      }
+
+      .insta-feed {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.6rem;
+      }
+
+      footer {
+        border-top: 1px solid #2a3040;
+        color: var(--muted);
+        padding: 1rem 0 2rem;
+      }
+
+      @media (max-width: 920px) {
+        .hero,
+        .about-layout,
+        .contact-layout,
+        .stat-grid,
+        .service-grid,
+        .proof-grid,
+        .review-grid,
+        .project-grid,
+        .pricing-grid,
+        .blog-grid,
+        .insta-feed {
+          grid-template-columns: 1fr;
+        }
+
+        .menu {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container nav">
+        <div class="brand">AH <span>INTERIORS</span></div>
+        <nav class="menu">
+          <a href="#home">Home</a>
+          <a href="#projects">Projects</a>
+          <a href="#services">Services</a>
+          <a href="#about">About</a>
+          <a href="#proof">Execution Proof</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#blog">Blog</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <a class="btn primary" href="#contact">Book Consultation</a>
+      </div>
+    </header>
+
+    <main>
+      <section id="home">
+        <div class="container hero">
+          <div>
+            <p class="tag">Luxury Interiors • Design + Execution</p>
+            <h1>We design & execute complete interior solutions</h1>
+            <p>
+              From concept to handover, AH Interiors creates premium spaces for homes and offices with dedicated on-site execution teams.
+            </p>
+            <div style="display:flex; gap:0.7rem; flex-wrap:wrap;">
+              <a class="btn primary" href="#contact">Get Quote</a>
+              <a class="btn ghost" href="#projects">View Projects</a>
+            </div>
+          </div>
+          <div class="card">
+            <img
+              src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb3?auto=format&fit=crop&w=1200&q=80"
+              alt="Premium interior living space"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="stats">
+        <div class="container stat-grid">
+          <article class="card"><strong>12+</strong>Years Experience</article>
+          <article class="card"><strong>280+</strong>Projects Completed</article>
+          <article class="card"><strong>35</strong>On-site Team Members</article>
+          <article class="card"><strong>4.9/5</strong>Client Ratings</article>
+        </div>
+      </section>
+
+      <section id="projects">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <p class="tag">Portfolio</p>
+              <h2>Before / After Projects</h2>
+            </div>
+          </div>
+          <div class="filter-row">
+            <button class="chip active" data-filter="all">All</button>
+            <button class="chip" data-filter="kitchen">Kitchen</button>
+            <button class="chip" data-filter="bedroom">Bedroom</button>
+            <button class="chip" data-filter="office">Office</button>
+          </div>
+          <div class="project-grid" id="projectGrid">
+            <article class="card project-card" data-type="kitchen">
+              <div class="before-after" data-slider>
+                <img src="https://images.unsplash.com/photo-1556911220-bda9f7f7597e?auto=format&fit=crop&w=900&q=80" alt="Kitchen before" loading="lazy" />
+                <div class="after-wrap">
+                  <img src="https://images.unsplash.com/photo-1556912173-46c336c7fd55?auto=format&fit=crop&w=900&q=80" alt="Kitchen after" loading="lazy" />
+                </div>
+              </div>
+              <input type="range" min="0" max="100" value="50" class="ba-range" />
+              <h3>Modular Kitchen • 2BHK</h3>
+              <p class="meta">Gurgaon • ₹5L–₹7L • Design + Turnkey</p>
+              <p>Client needed more storage and better workflow. We delivered sleek modular units with premium hardware and layered lighting.</p>
+            </article>
+
+            <article class="card project-card" data-type="bedroom">
+              <img src="https://images.unsplash.com/photo-1616594039964-3f5d8d1f6f0b?auto=format&fit=crop&w=900&q=80" alt="Luxury bedroom" loading="lazy" />
+              <h3>Master Bedroom Upgrade</h3>
+              <p class="meta">Delhi • ₹3L–₹4.2L • Execution</p>
+              <p>Converted a cluttered room into a calm premium suite with hidden storage, warm textures, and false ceiling lights.</p>
+            </article>
+
+            <article class="card project-card" data-type="office">
+              <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80" alt="Office interior" loading="lazy" />
+              <h3>IT Startup Office</h3>
+              <p class="meta">Noida • ₹14L+ • Design + Execution</p>
+              <p>Transformed empty shell into collaborative workspace with acoustic panels, glass cabins, and brand wall.</p>
+            </article>
+
+            <article class="card project-card" data-type="kitchen">
+              <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=900&q=80" alt="Contemporary kitchen" loading="lazy" />
+              <h3>Villa Kitchen + Utility</h3>
+              <p class="meta">South Delhi • Starting ₹9L • Turnkey</p>
+              <p>Created a dual-zone island kitchen with service area, quartz counters, and easy maintenance finishes.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="services">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <p class="tag">Services</p>
+              <h2>Clear Offers, Clear Process</h2>
+            </div>
+          </div>
+          <div class="service-grid">
+            <article class="card"><h3>Full Home Interior</h3><p>End-to-end interiors for 2BHK/3BHK/villas.<br />Starting ₹7.5L</p><a href="#contact" class="btn ghost">Get Quote</a></article>
+            <article class="card"><h3>Modular Kitchen</h3><p>Design, factory-built modules, installation.<br />Starting ₹1.9L</p><a href="#contact" class="btn ghost">Get Quote</a></article>
+            <article class="card"><h3>Wardrobe & Storage</h3><p>Sliding/hinged wardrobes, lofts, vanity.<br />Starting ₹75K</p><a href="#contact" class="btn ghost">Get Quote</a></article>
+            <article class="card"><h3>False Ceiling & Lighting</h3><p>Layered lighting + mood control setup.<br />Starting ₹95/sqft</p><a href="#contact" class="btn ghost">Get Quote</a></article>
+            <article class="card"><h3>Office Interior</h3><p>Cabins, workstations, reception, branding.<br />Starting ₹1,450/sqft</p><a href="#contact" class="btn ghost">Get Quote</a></article>
+            <article class="card"><h3>Turnkey Projects</h3><p>Design + procurement + site execution.<br />Starting ₹1,850/sqft</p><a href="#contact" class="btn ghost">Get Quote</a></article>
+          </div>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="container about-layout">
+          <article class="card">
+            <p class="tag">About Us</p>
+            <h2>Trusted Interior Partner</h2>
+            <p>Led by principal designer Aditi Harsh (12+ years), our studio combines premium design direction with disciplined on-site execution.</p>
+            <ul>
+              <li>280+ completed projects</li>
+              <li>In-house project managers + carpentry teams</li>
+              <li>Transparent timelines and milestone billing</li>
+              <li>Material quality checks at every stage</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Work Process</h3>
+            <ol class="process-list">
+              <li>Free consultation + requirement brief</li>
+              <li>Site measurement and concept planning</li>
+              <li>3D design + BOQ + quote</li>
+              <li>Material finalization</li>
+              <li>Execution with weekly tracking</li>
+              <li>Handover + post-completion support</li>
+            </ol>
+          </article>
+        </div>
+      </section>
+
+      <section id="proof">
+        <div class="container">
+          <div class="section-head"><div><p class="tag">Real Execution Proof</p><h2>Site Work & Ongoing Projects</h2></div></div>
+          <div class="proof-grid">
+            <article class="card"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=80" alt="Workers on site" loading="lazy" /><p>Team at active renovation site</p></article>
+            <article class="card"><img src="https://images.unsplash.com/photo-1626885930974-4b69aa21bbf9?auto=format&fit=crop&w=900&q=80" alt="Carpenter working" loading="lazy" /><p>Carpenter fitting custom unit</p></article>
+            <article class="card"><img src="https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?auto=format&fit=crop&w=900&q=80" alt="Material samples" loading="lazy" /><p>Material quality and finish checks</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section id="pricing">
+        <div class="container">
+          <div class="section-head"><div><p class="tag">Pricing</p><h2>Starting Packages</h2></div></div>
+          <div class="pricing-grid">
+            <article class="card"><h3>Basic Interior</h3><p>₹85,000 / room onwards</p></article>
+            <article class="card"><h3>Modular Kitchen</h3><p>Starting ₹1,90,000</p></article>
+            <article class="card"><h3>Turnkey Package</h3><p>Starting ₹1,850 / sqft</p></article>
+            <article class="card">
+              <h3>Quick Quote Calculator</h3>
+              <label>Area (sqft)</label>
+              <input id="areaInput" type="number" min="200" value="900" />
+              <label>Project Type</label>
+              <select id="typeInput">
+                <option value="1450">Design + Execution</option>
+                <option value="1850">Turnkey Premium</option>
+                <option value="1100">Renovation</option>
+              </select>
+              <p id="quoteResult">Estimated: ₹13,05,000</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="section-head"><div><p class="tag">Testimonials</p><h2>Reviews That Build Trust</h2></div></div>
+          <div class="review-grid">
+            <article class="card"><img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&w=700&q=80" alt="Client portrait" loading="lazy" /><p>“From design to execution, everything was smooth and premium.”<br /><strong>- Rajat, 3BHK Delhi</strong></p></article>
+            <article class="card"><img src="https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?auto=format&fit=crop&w=700&q=80" alt="Client portrait" loading="lazy" /><p>“Kitchen transformation is stunning, and delivery was on time.”<br /><strong>- Neha, Gurgaon</strong></p></article>
+            <article class="card"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=700&q=80" alt="Client portrait" loading="lazy" /><p>“Best execution team we have worked with for office interiors.”<br /><strong>- Arvind, Noida</strong></p></article>
+          </div>
+          <div class="card" style="margin-top:1rem;">
+            <h3>Google Reviews</h3>
+            <p>Embed your live Google review widget/code here for maximum credibility.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="blog">
+        <div class="container">
+          <div class="section-head"><div><p class="tag">Blog</p><h2>SEO Content for Google Leads</h2></div></div>
+          <div class="blog-grid">
+            <article class="card"><h3>2BHK Interior Cost in Delhi (2026 Guide)</h3><p>Understand budget split across kitchen, wardrobes, lighting, and labor.</p></article>
+            <article class="card"><h3>Modular Kitchen Price Guide</h3><p>Materials, hardware, countertop options and their price impact.</p></article>
+            <article class="card"><h3>Small Bedroom Design Ideas</h3><p>Smart storage and visual tricks for compact homes.</p></article>
+            <article class="card"><h3>Top 9 Interior Mistakes to Avoid</h3><p>Save money and avoid delays with better planning.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="section-head"><div><p class="tag">Instagram</p><h2>Latest Reels & Site Moments</h2></div></div>
+          <div class="insta-feed">
+            <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=400&q=80" alt="Insta 1" loading="lazy" />
+            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=400&q=80" alt="Insta 2" loading="lazy" />
+            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=400&q=80" alt="Insta 3" loading="lazy" />
+            <img src="https://images.unsplash.com/photo-1505693314120-0d443867891c?auto=format&fit=crop&w=400&q=80" alt="Insta 4" loading="lazy" />
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="container contact-layout">
+          <article class="card">
+            <p class="tag">Contact / Lead Generation</p>
+            <h2>Book Free Consultation</h2>
+            <div class="contact-buttons">
+              <a href="tel:+919876543210" class="btn primary">Call Now</a>
+              <a href="https://wa.me/919876543210" class="btn" style="background:#25d366;color:#fff;">WhatsApp</a>
+            </div>
+            <p>Email: hello@ahinteriors.in</p>
+            <form>
+              <input type="text" placeholder="Name" required />
+              <input type="tel" placeholder="Phone" required />
+              <input type="text" placeholder="City" />
+              <textarea rows="4" placeholder="Requirement"></textarea>
+              <select>
+                <option>Budget Range</option>
+                <option>₹2L - ₹5L</option>
+                <option>₹5L - ₹10L</option>
+                <option>₹10L+</option>
+              </select>
+              <button class="btn primary" type="submit">Get Free Consultation</button>
+            </form>
+          </article>
+          <article class="card">
+            <h3>Visit Studio</h3>
+            <iframe class="map" loading="lazy" allowfullscreen src="https://maps.google.com/maps?q=Delhi&t=&z=12&ie=UTF8&iwloc=&output=embed"></iframe>
+            <p>Enable call tracking and connect this form to email + WhatsApp API for live lead alerts.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <a class="floating-whatsapp" aria-label="Chat on WhatsApp" href="https://wa.me/919876543210">✆</a>
+
+    <footer>
+      <div class="container">
+        © <span id="year"></span> AH Interiors. All rights reserved.
+      </div>
+    </footer>
+
+    <script>
+      const chips = document.querySelectorAll('.chip');
+      const cards = document.querySelectorAll('#projectGrid .project-card');
+      chips.forEach((chip) => {
+        chip.addEventListener('click', () => {
+          chips.forEach((c) => c.classList.remove('active'));
+          chip.classList.add('active');
+          const filter = chip.dataset.filter;
+          cards.forEach((card) => {
+            const match = filter === 'all' || card.dataset.type === filter;
+            card.style.display = match ? 'grid' : 'none';
+          });
+        });
+      });
+
+      document.querySelectorAll('.ba-range').forEach((slider) => {
+        slider.addEventListener('input', (e) => {
+          const wrap = e.target.previousElementSibling.querySelector('.after-wrap');
+          wrap.style.width = `${e.target.value}%`;
+        });
+      });
+
+      const areaInput = document.getElementById('areaInput');
+      const typeInput = document.getElementById('typeInput');
+      const result = document.getElementById('quoteResult');
+      function updateQuote() {
+        const area = Number(areaInput.value || 0);
+        const rate = Number(typeInput.value);
+        const amount = area * rate;
+        result.textContent = `Estimated: ₹${amount.toLocaleString('en-IN')}`;
+      }
+      areaInput.addEventListener('input', updateQuote);
+      typeInput.addEventListener('change', updateQuote);
+      updateQuote();
+
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "AH Interiors",
+        "description": "Interior design and execution services for residential and commercial spaces.",
+        "telephone": "+91-98765-43210",
+        "areaServed": "Delhi NCR",
+        "url": "https://example.com"
+      }
+    </script>
+  </body>
+</html>
